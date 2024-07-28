@@ -1,0 +1,112 @@
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--pale-blue);
+    font-family: "Red Hat Display";
+}
+
+.card {
+    max-inline-size: 35ch;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 1em;
+    text-align: center;
+}
+
+.card > * + * {
+    margin-block-start: 1em;
+}
+
+.card > *:not(:first-child) {
+    margin-inline:2em;
+}
+
+img {
+    max-inline-size: 100%;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.flex_plan {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    background-color: var(--very-pale-blue);
+    border-radius: 1em;
+    padding: 1em;
+}
+
+p {
+    color: var(--desaturated-blue);
+}
+
+.flex_plan a {
+    margin-inline-start: auto;
+    color: var(--bright-blue);
+    font-weight: bold;
+}
+
+.flex_plan span {
+    color: black;
+    font-weight: bold;
+}
+
+.first_button {
+    padding: 1em;
+    background-color: var(--bright-blue);
+    color: var(--very-pale-blue);
+    font-weight: bold;
+    border-radius: 1em;
+}
+
+.second_button {
+    padding: 1em;
+    background-color: white;
+    border: transparent;
+    border-radius: 1em;
+    color: var(--desaturated-blue);
+    font-weight: bold;
+    margin-block-end: 2em;
+}
+
+:hover:is(a, button) {
+    cursor: pointer;
+}
+
+.first_button:hover {
+    opacity: 0.6;
+}
+
+a:hover {
+    font-weight: normal;
+}
+
+.second_button:hover {
+    color: unset;
+}
+
+@media (max-width: 320px) {
+    .card {
+        max-inline-size: 90%;
+    }
+}
